@@ -7,9 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [0.1.0] - 2020-03-09
+## [1.0.0] - 2020-03-09
 ### Added
 - Initial Release.
 
-[Unreleased]: https://gitlab.com/hmajid2301/dockerhub-descriptions/-/compare/release%2F0.1.0...master
-[0.1.0]: https://gitlab.com/hmajid2301/dockerhub-descriptions/-/tags/release%2F0.1.0
+[Unreleased]: https://gitlab.com/hmajid2301/dockerhub-descriptions/-/compare/release%2F1.0.0...master
+[1.0.0]: https://gitlab.com/hmajid2301/dockerhub-descriptions/-/tags/release%2F1.0.0
