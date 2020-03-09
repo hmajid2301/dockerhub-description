@@ -1,0 +1,43 @@
+variables:
+  DOCKER_DRIVER: overlay2
+
+services:
+  - docker:dind
+
+stages:
+  - publish
+
+publish-docker:
+  stage: publish
+  image: docker
+  # only:
+  #   - /^release/.*$/
+  script:
+    - apk add jq node npm
+    - npm install
+    - npm run build
+    - VERSION_TAG=$(jq -r .version package.json)
+    - docker login ${CI_REGISTRY} -u gitlab-ci-token -p ${CI_BUILD_TOKEN}
+    - docker pull ${CI_REGISTRY_IMAGE}:${VERSION_TAG} && echo "Tag ${VERSION_TAG} already exists" && exit 1 || true
+    - docker build -t ${CI_REGISTRY_IMAGE}:latest -t ${CI_REGISTRY_IMAGE}:${VERSION_TAG}  .
+    - docker push ${CI_REGISTRY_IMAGE}:latest
+    - docker push ${CI_REGISTRY_IMAGE}:${VERSION_TAG}
+    - docker login -u hmajid2301 -p ${DOCKER_ACCESS_TOKEN}
+    - export IMAGE_NAME="hmajid2301/dockerhub-descriptions-updater"
+    - docker build -t ${IMAGE_NAME}:latest -t ${IMAGE_NAME}:${VERSION_TAG}  .
+    - docker push ${IMAGE_NAME}:latest
+    - docker push ${IMAGE_NAME}:${VERSION_TAG}
+# publish-readme:hub:
+#   stage: publish
+#   # only:
+#   #   - /^release/.*$/
+#   image:
+#     name: hmajid2301/dockerhub-descriptions-updater
+#   variables:
+#     DOCKER_USERNAME: hmajid2301
+#     DOCKER_PASSWORD: ${DOCKER_PASSWORD}
+#     DOCKERHUB_REPO_PREFIX: hmajid2301
+#     DOCKERHUB_REPO_NAME: dockerhub-descriptions
+#     README_FILEPATH: README.md
+#   script:
+#     - echo ""

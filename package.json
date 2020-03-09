@@ -1,0 +1,16 @@
+{
+    "name": "dockerhub-description-updater",
+    "version": "0.1.0",
+    "description": "Updates the description of in docker hub using README.md.",
+    "main": "index.js",
+    "scripts": {
+        "build": "babel --presets es2015 -d lib/ src"
+    },
+    "dependencies": {
+        "docker-hub-api": "0.8.0"
+    },
+    "devDependencies": {
+        "babel-cli": "6.26.0",
+        "babel-preset-es2015": "6.24.1"
+    }
+}
