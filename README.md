@@ -16,10 +16,14 @@ npm run start
 
 ### Args
 
+```bash
+npm run start -- --help
 Usage: src [options]
 
+  Updates description of Docker Hub repository.
+
 Options:
-  --version         Show version number                                [boolean]
+  --version         Show version number                               [boolean]
   -u, --username    Docker Hub username.                              [required]
   -p, --password    Docker Hub password (cannot be an access token).  [required]
   -r, --repoName    The repository name that you want to update the description
@@ -29,6 +33,7 @@ Options:
   -f, --readmePath  Path to README file which will be used as the description of
                     repository on Docker Hub.           [default: "./README.md"]
   -h, --help        Show help                                          [boolean]
+```
 
 ### Docker
 

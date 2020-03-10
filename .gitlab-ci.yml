@@ -51,8 +51,8 @@ publish:npm:
   only:
     - /^release/.*$/
   script:
+    - npm install
     - npm run build
-    - ls -l dist
     - echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc
     - npm publish --non-interactive
 
