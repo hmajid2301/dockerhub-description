@@ -1,5 +1,8 @@
 image: node:10.13.0
 
+services:
+  - docker:dind
+
 variables:
   DOCKER_DRIVER: overlay2
 
@@ -27,8 +30,8 @@ lint:code-formatter:
 publish-docker:
   stage: publish
   image: docker
-  only:
-    - /^release/.*$/
+  # only:
+  #   - /^release/.*$/
   script:
     - apk add --update jq nodejs npm
     - npm install
@@ -47,9 +50,8 @@ publish-docker:
 
 publish:npm:
   stage: publish
-  image: node:10.15.3
-  only:
-    - /^release/.*$/
+  # only:
+  #   - /^release/.*$/
   script:
     - npm install
     - npm run build
@@ -58,8 +60,8 @@ publish:npm:
 
 publish-readme:hub:
   stage: post-publish
-  only:
-    - /^release/.*$/
+  # only:
+  #   - /^release/.*$/
   image:
     name: registry.gitlab.com/hmajid2301/dockerhub-descriptions-updater
     entrypoint: [""]
