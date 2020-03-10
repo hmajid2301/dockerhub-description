@@ -35,6 +35,22 @@ Options:
   -h, --help        Show help                                          [boolean]
 ```
 
+Options:
+  -m, --file PATH                 Path to markdown file, where the mermaid
+                                  code blocks will be converted to images.
+  -f, --folder PATH               Path to folder where we will convert all
+                                  markdown mermaid code blocks to images.
+  -i, --ignore PATH               Path to folder to ignore, markdown files in
+                                  this folder will not be converted.
+  -o, --output PATH               Path to folder where to save the new
+                                  markdown files.  [required]
+  -l, --log-level                 [DEBUG|INFO|ERROR]
+                                  Path to folder where to save the new
+                                  markdown files.
+  --help                          Show this message and exit.
+
+
+
 ### Docker
 
 You can run the Docker container locally like so.
