@@ -1,6 +1,6 @@
 {
     "name": "dockerhub-description-updater",
-    "version": "1.0.0.pos1",
+    "version": "1.0.0post1",
     "description": "Updates the description of a Docker Hub using README.md.",
     "repository": {
         "type": "git",
