@@ -3,6 +3,9 @@ image: node:10.13.0
 variables:
   DOCKER_DRIVER: overlay2
 
+services:
+  - docker:dind
+
 stages:
   - test
   - publish
