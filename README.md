@@ -59,7 +59,7 @@ DOCKERHUB_USERNAME=hmajid2301
 DOCKERHUB_PASSWORD=MY_PASS
 DOCKERHUB_REPO_PREFIX=hmajid2301
 DOCKERHUB_REPO_NAME=dockerhub-descriptions-updater
-README_PATH=/app/README.md
+DOCKERHUB_README_PATH=/app/README.md
 ```
 
 ### .gitlab-ci.yml
@@ -76,9 +76,8 @@ publish-readme:hub:
   variables:
     DOCKERHUB_USERNAME: hmajid2301
     DOCKERHUB_PASSWORD: ${DOCKER_PASSWORD}
-    DOCKERHUB_REPO_PREFIX: hmajid2301
     DOCKERHUB_REPO_NAME: markdown-to-devto
-    README_PATH: README.md
+    DOCKERHUB_README_PATH: README.md
     publish-readme:hub:
   script:
     - pandoc --from rst README.rst --to markdown_strict -o README.md

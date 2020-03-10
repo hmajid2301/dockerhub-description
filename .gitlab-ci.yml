@@ -1,5 +1,8 @@
 image: node:10.13.0
 
+services:
+  - docker:dind
+
 variables:
   DOCKER_DRIVER: overlay2
 
@@ -47,7 +50,6 @@ publish-docker:
 
 publish:npm:
   stage: publish
-  image: node:10.15.3
   only:
     - /^release/.*$/
   script:
