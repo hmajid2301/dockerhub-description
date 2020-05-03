@@ -8,16 +8,17 @@ documents to markdown.
 You can the node script like so.
 
 ```
-npm install
+npm install dockerhub
+npm i dockerhub-description-updater
 touch .env
 source .env
-npm run start
+dockerhub_description_updater
 ```
 
 ### Args
 
 ```bash
-npm run start -- --help
+dockerhub_description_updater --help
 Usage: src [options]
 
   Updates description of Docker Hub repository.

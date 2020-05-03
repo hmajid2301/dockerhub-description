@@ -2,6 +2,10 @@
     "name": "dockerhub-description-updater",
     "version": "1.0.0post1",
     "description": "Updates the description of a Docker Hub using README.md.",
+    "homepage": "https://gitlab.com/hmajid2301/dockerhub-descriptions-updater#readme",
+    "author": "Haseeb Majid",
+    "license": "MIT",
+    "main": "lib/index.js",
     "repository": {
         "type": "git",
         "url": "git+ssh://git@gitlab.com/hmajid2301/dockerhub-descriptions-updater.git"
@@ -10,13 +14,12 @@
         "docker",
         "script"
     ],
-    "author": "Haseeb Majid",
-    "license": "MIT",
     "bugs": {
         "url": "https://gitlab.com/hmajid2301/dockerhub-descriptions-updater/issues"
     },
-    "homepage": "https://gitlab.com/hmajid2301/dockerhub-descriptions-updater#readme",
-    "main": "lib/index.js",
+    "bin": {
+        "dockerhub_description_updater": "./lib/index.js"
+    },
     "scripts": {
         "build": "babel --presets es2015 -d lib/ src",
         "start": "babel-node ./src",
