@@ -65,7 +65,7 @@ DOCKERHUB_README_PATH=/app/README.md
 
 ### .gitlab-ci.yml
 
-You can also use it during CI/CD. The image comes with `pandoc`, so you can conver documents to markdown and
+You can also use it during CI/CD. The image comes with `pandoc`, so you can convert documents to markdown and
 then update the full description to the specified repo.
 
 ```yaml
